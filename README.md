@@ -6,6 +6,13 @@ Skeleton application using exoport
 This is an example of how to build an application on top of `exoport`
 and get up and running quickly.
 
+Step 0: Prerequisites
+---------------------
+
+* Linux or similar OS
+* git installed
+* Erlang/OTP R15B02 or later installed
+
 Step 1: Install rebar
 ---------------------
 
@@ -22,10 +29,13 @@ Writing src/exoskeleton_app.erl
 Writing src/exoskeleton_sup.erl
 ```
 
+Go to the `rebar` directory and run `make`.
+Copy the `rebar` executable to a directory in your path.
+
 Step 3: Edit the rebar.config file
 ----------------------------------
 
-You need to add a dependency to `exoport`
+You need to add a dependency to `exoport` in [`exoskeleton/rebar.config`](rebar.config):
 
 ``` erlang
 %% -*- erlang -*-
