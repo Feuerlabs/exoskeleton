@@ -1,0 +1,12 @@
+{application, exoskeleton,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { exoskeleton_app, []}},
+  {env, []}
+ ]}.
