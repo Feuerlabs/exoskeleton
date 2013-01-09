@@ -130,4 +130,35 @@ setup:
 	deps/setup/setup_gen $(NAME) priv/setup.config setup -pz `pwd`/ebin
 ```
 
+Step 8: Run the system
+----------------------
 
+Step 7, resulted in a set of boot scripts under the `setup/` directory.
+Let's now create a make target to start our test system.
+
+```make
+run: setup
+	erl -boot setup/start -config setup/sys
+```
+
+Given that we have access to a running Exosense server, and correct
+connection settings in our [`priv/exoport.config`](priv/exoport.config),
+we can now perform a first connection test:
+
+```erlang
+$ make run
+ERL_LIBS+=":`pwd`/deps" \
+	deps/setup/setup_gen exoskeleton priv/setup.config setup -pz `pwd`/ebin
+erl -boot setup/start -config setup/sys
+Erlang R15B02 (erts-5.9.2) [source] [64-bit] [smp:4:4] [async-threads:0] [kernel-poll:false]
+
+
+=PROGRESS REPORT==== 9-Jan-2013::19:27:56 ===
+...
+19:27:57.232 [info] Application exoport started on node nonode@nohost
+19:27:57.239 [info] Application exoskeleton started on node nonode@nohost
+Eshell V5.9.2  (abort with ^G)
+1> exoport:ping().
+handle_request(Socket, {reply,pong}, State)
+{reply,pong,[]}
+```
