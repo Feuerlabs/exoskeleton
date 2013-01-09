@@ -80,7 +80,7 @@ which is able to start `exoport` and all required applications.
 Step 6: Create a setup script
 -----------------------------
 
-The following config file (see [`priv/setup.config`](exoskeleton/blob/master/priv/setup.config)
+The following config file (see [`priv/setup.config`](priv/setup.config)
 should be enough to build a system with basic settings:
 
 ```erlang
@@ -100,7 +100,7 @@ should be enough to build a system with basic settings:
 ].
 ```
 
-We also need to create [`priv/exoport.config`](exoskeleton/blob/master/priv/exoport.config) with connection
+We also need to create [`priv/exoport.config`](priv/exoport.config) with connection
 settings for `exoport` (note that these are dummy settings):
 
 ```erlang
@@ -120,7 +120,7 @@ During development, the environment variable ERL_LIBS is a good way
 to accomplish this, but now, the applications are in the `deps/`
 subdirectory. We set a temporary ERL_LIBS variable, and also add our
 own application location as a path option. Let's put it into the 
-[`Makefile`](exoskeleton/blob/master/Makefile) once and for all:
+[`Makefile`](Makefile) once and for all:
 
 ```make
 NAME=exoskeleton
