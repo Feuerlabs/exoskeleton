@@ -90,7 +90,7 @@ which is able to start `exoport` and all required applications.
 Step 6: Create a setup script
 -----------------------------
 
-The following config file (see [`priv/setup.config`](priv/setup.config)
+The following config file (see [`priv/setup.config`](priv/setup.config))
 should be enough to build a system with basic settings:
 
 ```erlang
