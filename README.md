@@ -155,7 +155,7 @@ Given that we have access to a running Exosense server, and correct
 connection settings in our [`priv/exoport.config`](priv/exoport.config),
 we can now perform a first connection test:
 
-```erlang
+```
 $ make run
 ERL_LIBS+=":`pwd`/deps" \
 	deps/setup/setup_gen exoskeleton priv/setup.config setup -pz `pwd`/ebin
